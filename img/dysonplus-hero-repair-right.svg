@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 620">
+<defs>
+ <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#DFDDE2"/></linearGradient>
+ <linearGradient id="sideL" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E4E6EA"/><stop offset="1" stop-color="#BFC3CB"/></linearGradient>
+ <linearGradient id="sideR" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#B8BCC4"/><stop offset="1" stop-color="#868B96"/></linearGradient>
+ <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8558C"/><stop offset=".5" stop-color="#C2185B"/><stop offset="1" stop-color="#5E0B2C"/></linearGradient>
+ <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1F1E24"/><stop offset="1" stop-color="#0D0D10"/></linearGradient>
+ <linearGradient id="glare" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <radialGradient id="gear" cx=".35" cy=".3" r=".85"><stop stop-color="#FFC2DA"/><stop offset=".45" stop-color="#FF6FA8"/><stop offset="1" stop-color="#B0164F"/></radialGradient>
+ <radialGradient id="hole" cx=".6" cy=".65" r=".8"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#CED1D7"/></radialGradient>
+ <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#EE76A3"/><stop offset=".5" stop-color="#C2185B"/><stop offset="1" stop-color="#5E0B2C"/></linearGradient>
+ <linearGradient id="bat" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#5A5E68"/><stop offset=".45" stop-color="#33373F"/><stop offset="1" stop-color="#1D1F24"/></linearGradient>
+ <linearGradient id="cell" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#EEEFF2"/><stop offset="1" stop-color="#868B96"/></linearGradient>
+ <linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFC2DA"/><stop offset="1" stop-color="#D81B60"/></linearGradient>
+ <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+ <filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+ <filter id="drop" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#16161A" flood-opacity=".2"/></filter>
+</defs>
+<g transform="translate(55 80)" stroke-linejoin="round">
+ <!-- base isométrica con volumen -->
+ <g filter="url(#drop)">
+  <path d="M20 390 155 315l145 82-140 80z" fill="url(#top)"/>
+  <path d="M20 390v28l140 80v-21z" fill="url(#sideL)"/>
+  <path d="M160 477v21l140-80v-21z" fill="url(#sideR)"/>
+  <path d="M20 390 155 315l145 82" fill="none" stroke="#fff" stroke-width="2.5" stroke-opacity=".9"/>
+ </g>
+ <!-- sombras de contacto -->
+ <ellipse cx="150" cy="380" rx="95" ry="18" fill="#16161A" opacity=".14" filter="url(#soft)"/>
+ <ellipse cx="72" cy="392" rx="34" ry="8" fill="#16161A" opacity=".28" filter="url(#soft)"/>
+ <ellipse cx="258" cy="412" rx="62" ry="10" fill="#16161A" opacity=".28" filter="url(#soft)" transform="rotate(12 258 412)"/>
+ <!-- pantalla de diagnóstico con grosor -->
+ <g transform="translate(35 90) rotate(-8 120 100)">
+  <rect x="23" y="40" width="225" height="155" rx="18" fill="#3A061B"/>
+  <rect x="15" y="30" width="225" height="155" rx="18" fill="url(#frame)"/>
+  <path d="M33 33h189" stroke="#F7B6CF" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+  <rect x="31" y="46" width="193" height="123" rx="10" fill="#3A061B"/>
+  <rect x="33" y="48" width="189" height="119" rx="9" fill="url(#screen)"/>
+  <rect x="48" y="62" width="58" height="24" rx="5" fill="none" stroke="#DCDEE3" stroke-width="3"/>
+  <rect x="106" y="69" width="5" height="10" rx="2" fill="#DCDEE3"/>
+  <rect x="53" y="67" width="38" height="14" rx="3" fill="url(#cell)"/>
+  <rect x="122" y="66" width="44" height="6" rx="3" fill="#33373F"/>
+  <rect x="122" y="77" width="30" height="6" rx="3" fill="#33373F"/>
+  <circle cx="196" cy="74" r="14" fill="#B8BCC4" opacity=".35" filter="url(#glow)"/>
+  <circle cx="196" cy="74" r="13" fill="url(#cell)"/>
+  <path d="m189 74 5 5 9-10" fill="none" stroke="#16161A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M48 150h158M48 128h158M48 106h158" stroke="#2A2A31" stroke-width="2"/>
+  <path d="M48 138 72 126l20 8 22-24 20 10 24-18 18 6 26-12" fill="none" stroke="#FF6FA8" stroke-width="7" stroke-linecap="round" opacity=".45" filter="url(#glow)"/>
+  <path d="M48 138 72 126l20 8 22-24 20 10 24-18 18 6 26-12" fill="none" stroke="#FFA9CB" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M33 48h189v44L33 150z" fill="url(#glare)"/>
+ </g>
+ <!-- engranaje con grosor -->
+ <g transform="translate(212 28)">
+  <path transform="translate(6 9)" fill="#650B30" d="M97.1 46.4 L108.4 47.1 L108.4 62.9 L97.1 63.6 L92.8 75.5 L101.0 83.3 L90.9 95.4 L81.7 88.7 L70.8 95.0 L72.0 106.2 L56.5 109.0 L53.8 98.0 L41.4 95.8 L35.1 105.2 L21.5 97.3 L26.5 87.2 L18.4 77.5 L7.5 80.7 L2.1 65.9 L12.5 61.3 L12.5 48.7 L2.1 44.1 L7.5 29.3 L18.4 32.5 L26.5 22.8 L21.5 12.7 L35.1 4.8 L41.4 14.2 L53.8 12.0 L56.5 1.0 L72.0 3.8 L70.8 15.0 L81.7 21.3 L90.9 14.6 L101.0 26.7 L92.8 34.5Z"/>
+  <path fill="url(#gear)" stroke="#C0185A" stroke-width="1.5" d="M97.1 46.4 L108.4 47.1 L108.4 62.9 L97.1 63.6 L92.8 75.5 L101.0 83.3 L90.9 95.4 L81.7 88.7 L70.8 95.0 L72.0 106.2 L56.5 109.0 L53.8 98.0 L41.4 95.8 L35.1 105.2 L21.5 97.3 L26.5 87.2 L18.4 77.5 L7.5 80.7 L2.1 65.9 L12.5 61.3 L12.5 48.7 L2.1 44.1 L7.5 29.3 L18.4 32.5 L26.5 22.8 L21.5 12.7 L35.1 4.8 L41.4 14.2 L53.8 12.0 L56.5 1.0 L72.0 3.8 L70.8 15.0 L81.7 21.3 L90.9 14.6 L101.0 26.7 L92.8 34.5Z"/>
+  <circle cx="55" cy="55" r="33" fill="none" stroke="#FFE0EC" stroke-width="3" stroke-dasharray="40 170" transform="rotate(-160 55 55)" opacity=".9"/>
+  <circle cx="58" cy="59" r="20" fill="#650B30"/>
+  <circle cx="55" cy="55" r="19" fill="url(#hole)"/>
+ </g>
+ <!-- escudo de garantía con grosor -->
+ <g transform="translate(34 298)">
+  <path transform="translate(5 7)" d="M34 0 66 12v26c0 22-13 37-32 46C15 75 2 60 2 38V12z" fill="#3A061B"/>
+  <path d="M34 0 66 12v26c0 22-13 37-32 46C15 75 2 60 2 38V12z" fill="url(#shield)"/>
+  <path d="M34 6 60 16v22c0 18-10 31-26 39" fill="none" stroke="#F7B6CF" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+  <path d="m20 41 10 10 18-20" fill="none" stroke="#3A061B" stroke-width="7" stroke-linecap="round" opacity=".35" transform="translate(1 2)"/>
+  <path d="m20 41 10 10 18-20" fill="none" stroke="#FBFAFB" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- batería con carga y grosor -->
+ <g transform="translate(200 300) rotate(12)">
+  <rect x="6" y="26" width="118" height="70" rx="16" fill="#16161A"/>
+  <rect x="0" y="18" width="118" height="70" rx="16" fill="url(#bat)" stroke="#C2185B" stroke-width="3"/>
+  <path d="M14 22h90" stroke="#9296A0" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+  <rect x="118" y="38" width="12" height="30" rx="4" fill="url(#frame)"/>
+  <rect x="12" y="30" width="68" height="46" rx="7" fill="#16161A"/>
+  <rect x="16" y="34" width="18" height="38" rx="4" fill="url(#cell)"/>
+  <rect x="38" y="34" width="18" height="38" rx="4" fill="url(#cell)"/>
+  <rect x="60" y="34" width="16" height="38" rx="4" fill="url(#cell)" opacity=".3"/>
+  <path d="m100 28-14 26h12l-8 24 20-32H98l8-18z" fill="#D81B60" opacity=".5" filter="url(#glow)"/>
+  <path d="m98 26-14 26h12l-8 24 20-32H96l8-18z" fill="url(#bolt)" stroke="#8E1043" stroke-width="1.5"/>
+ </g>
+</g>
+</svg>

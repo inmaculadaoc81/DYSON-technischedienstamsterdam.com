@@ -1,0 +1,233 @@
+/* DysonPlus: identidad cromática fucsia eléctrico y grafito, con detalles en gris níquel.
+   Una sola capa de estilos. WhatsApp conserva su verde y YouTube su rojo corporativo;
+   el botón "Solicita tu recogida ahora" es negro en todos los estados. */
+:root{
+  --dp-brand:#C2185B;--dp-brand-dark:#9C1248;--dp-brand-darker:#5E0B2C;
+  --dp-accent:#FF6FA8;--dp-accent-strong:#D81B60;--dp-nickel:#B8BCC4;--dp-steel-soft:#EBE3E8;
+  --dp-ink:#16161A;--dp-ink-2:#0D0D10;
+  --dp-soft:#F6F5F7;--dp-soft-2:#FBFAFB;--dp-border:#E6E3E8;
+  --dp-text:#1A1A1F;--dp-text-gray:#5E5F68;--dp-text-gray-light:#878892;
+  --green:var(--dp-brand);--green-dark:var(--dp-brand-dark);--green-darker:var(--dp-brand-darker);
+  --dark:var(--dp-ink);--dark-2:var(--dp-ink-2);
+  --bg-light-green:var(--dp-soft);--bg-light-green-2:var(--dp-soft-2);
+  --text-dark:var(--dp-text);--text-gray:var(--dp-text-gray);--text-gray-light:var(--dp-text-gray-light);
+  --border-light:var(--dp-border);--white:#fff;
+  --editorial-accent:Georgia,'Times New Roman',serif;
+}
+html,body{overflow-x:clip}
+body{color:var(--dp-text);background:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--dp-brand);outline-offset:3px}
+
+/* Logotipo textual (colores de cabecera en dysonplus-header-hero.css). */
+.nav-wrap{max-width:1240px;gap:20px}
+.logo{flex:0 1 auto;min-width:0;display:inline-flex;align-items:center;gap:10px}
+.logo-icon{flex:none;display:block}
+.logo-word,.footer-logo-word{font-weight:900;font-size:22px;letter-spacing:-.02em;color:#fff;white-space:nowrap}
+.logo-word em,.footer-logo-word em{font-style:normal;color:var(--dp-accent)}
+.main-nav{gap:clamp(15px,2vw,29px)!important}
+
+/* Botones */
+.btn-primary{background:linear-gradient(135deg,#E03A7A 0%,var(--dp-brand) 55%,var(--dp-brand-dark) 100%);color:#fff;box-shadow:0 6px 22px rgba(194,24,91,.26)}
+.btn-primary:hover{background:linear-gradient(135deg,var(--dp-brand-dark),var(--dp-brand-darker));box-shadow:0 10px 28px rgba(194,24,91,.34)}
+.btn-outline{border-color:var(--dp-border)}.btn-outline svg{color:var(--dp-brand)}
+
+/* Franja de servicio independiente */
+.disclaimer-bar{background:var(--dp-brand-darker);color:#fff;text-align:center;font-size:13px;font-weight:700;letter-spacing:.01em;padding:9px 18px;line-height:1.35;box-shadow:0 3px 12px rgba(13,13,16,.12)}
+.disclaimer-bar::before{content:"ℹ";display:inline-block;margin-right:8px;font-size:14px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding:80px 0 60px;background:linear-gradient(180deg,var(--dp-soft) 0%,var(--dp-soft-2) 32%,#fff 62%,var(--dp-soft) 100%)}
+.hero .container{position:relative;z-index:3}
+.hero-inner{position:relative;z-index:4}
+.hero-pattern{background-image:url('img/dysonplus-hero-pattern.svg'),linear-gradient(rgba(194,24,91,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(194,24,91,.05) 1px,transparent 1px);background-size:cover,52px 52px,52px 52px;background-position:center center;opacity:.76;-webkit-mask-image:none;mask-image:none}
+.hero-glow{background:radial-gradient(circle,rgba(224,58,122,.24),rgba(255,111,168,.10) 48%,transparent 74%);filter:blur(60px);opacity:.74}
+.hero h1{font-size:clamp(37px,4.6vw,60px);max-width:800px;margin:0 auto 35px;letter-spacing:-.055em;text-wrap:balance;color:var(--dp-ink)}
+.hero .accent,.title-accent{font-family:var(--editorial-accent);font-weight:500;font-style:italic;letter-spacing:-.035em;color:var(--dp-brand)}
+.hero .hero-lead{display:none}
+.hero-features{gap:24px;margin:0 auto 33px}
+.hero-feature{color:var(--dp-ink);font-size:13.5px}
+.hero-feature svg,.hero-info-item svg{color:var(--dp-brand)}
+.hero-info{margin:0 auto 22px;max-width:665px;background:#fff;box-shadow:0 10px 32px rgba(94,11,44,.05)}
+.hero-info-item{font-size:13px}.hero-info-item span{color:var(--dp-text-gray)}
+.hero-actions{max-width:575px;gap:11px}
+.hero-action{min-width:0;white-space:normal;line-height:1.4;text-wrap:balance;border:1px solid rgba(255,255,255,.16);box-shadow:0 6px 19px rgba(22,22,26,.16);color:#fff}
+.hero-action svg{flex:0 0 17px}
+.hero-actions .phone-action{background:linear-gradient(135deg,var(--dp-brand),var(--dp-brand-dark));color:#fff}
+.hero-actions .phone-action:hover,.hero-actions .phone-action:focus-visible{background:linear-gradient(135deg,var(--dp-brand-dark),var(--dp-brand-darker));transform:translateY(-2px)}
+/* Solicita tu recogida ahora: negro en todos los estados y tamaños. */
+.hero-actions .appointment-action,.hero-actions .appointment-action:hover,.hero-actions .appointment-action:focus,.hero-actions .appointment-action:focus-visible,.hero-actions .appointment-action:active{background:#050505!important;background-image:none!important;border-color:#050505!important;color:#fff!important}
+.hero-actions .appointment-action:hover,.hero-actions .appointment-action:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.28)}
+/* El verde queda reservado a WhatsApp. */
+.hero-actions .whatsapp-action,.floating-cta{background:linear-gradient(145deg,#35D36F,#20B45C 58%,#168A45 100%)!important;color:#fff!important;box-shadow:0 4px 20px rgba(31,157,85,.3)!important}
+.hero-actions .whatsapp-action:hover,.hero-actions .whatsapp-action:focus-visible,.floating-cta:hover{background:#168A45!important}
+.floating-cta{z-index:200}.floating-cta svg{width:25px;height:25px;stroke:#fff;fill:none;stroke-width:1.8}
+.eyebrow{color:var(--dp-brand)}.eyebrow .line{background:var(--dp-accent-strong)}
+
+/* Ilustraciones laterales SVG del hero */
+.hero-vacuum-art{position:absolute;z-index:1;top:50%;width:clamp(190px,22vw,330px);height:auto;max-height:82%;object-fit:contain;pointer-events:none;user-select:none;opacity:.92;filter:drop-shadow(0 22px 30px rgba(22,22,26,.16));animation:dysonplusHeroFloat 5.5s ease-in-out infinite}
+.hero-vacuum-left{width:clamp(180px,20vw,300px);max-height:76%;left:clamp(18px,3vw,52px);object-position:center;transform:translateY(-50%)}
+.hero-vacuum-right{right:clamp(8px,2vw,34px);transform:translateY(-50%) rotate(2deg);animation-delay:-2.4s}
+@keyframes dysonplusHeroFloat{0%,100%{margin-top:0}50%{margin-top:-13px}}
+@media(max-width:1180px){.hero-vacuum-art{width:190px;opacity:.18}.hero-vacuum-left{width:175px;left:8px;opacity:.16}.hero-vacuum-right{right:4px}}
+/* En móvil no se muestran las ilustraciones del hero. */
+@media(max-width:720px){.hero-vacuum-art{display:none}}
+
+/* Beneficios inmediatamente debajo del hero */
+.hero-benefits{position:relative;background:#fff;padding:26px 0 34px;z-index:3}
+.hero-benefits-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:linear-gradient(135deg,var(--dp-soft-2),var(--dp-soft));border:1px solid var(--dp-border);border-radius:20px;box-shadow:0 12px 32px rgba(94,11,44,.07);overflow:hidden}
+.hero-benefit{min-height:160px;padding:27px 24px 25px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative}
+.hero-benefit:not(:last-child)::after{content:"";position:absolute;right:0;top:26px;bottom:26px;width:1px;background:var(--dp-steel-soft)}
+.hero-benefit-icon{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:15px;background:#FCE8F0;color:var(--dp-brand);border:1px solid var(--dp-steel-soft)}
+.hero-benefit-icon svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.hero-benefit h2{margin:0;color:var(--dp-ink);font-family:Poppins,Inter,sans-serif;font-size:clamp(16px,1.35vw,20px);line-height:1.3;font-weight:800}
+@media(max-width:900px){.hero-benefits-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-benefit:nth-child(2)::after{display:none}.hero-benefit:nth-child(-n+2){border-bottom:1px solid var(--dp-steel-soft)}}
+@media(max-width:560px){.hero-benefits{padding:18px 0 26px}.hero-benefit{min-height:138px;padding:20px 12px}.hero-benefit::after{display:none}.hero-benefit:nth-child(odd){border-right:1px solid var(--dp-steel-soft)}.hero-benefit-icon{width:50px;height:50px;margin-bottom:11px}.hero-benefit h2{font-size:14px}}
+
+/* Reparación rápida */
+.fast-section{padding:82px 0;background:#fff}
+.fast-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(42px,7vw,90px);align-items:start;max-width:1050px;margin:0 auto}
+.fast-heading{padding-top:2px;text-align:left}
+.fast-heading .eyebrow{justify-content:flex-start;text-align:left}
+.fast-heading .section-title{margin:16px 0 0;text-align:left;max-width:470px;font-size:clamp(32px,3.5vw,48px);line-height:1.12;color:var(--dp-ink)}
+.fast-details{border-left:1px solid var(--dp-border);padding-left:clamp(28px,4vw,50px)}
+.fast-details .section-sub{text-align:left;margin:0;color:var(--dp-text-gray);line-height:1.75}
+.ticks{display:grid;gap:13px;margin-top:26px}
+.tick{display:flex;gap:12px;align-items:flex-start}
+.tick i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--dp-soft);color:var(--dp-brand);display:grid;place-items:center;font-weight:900;flex:none;font-size:14px}
+.tick b{color:var(--dp-ink)}.tick div{font-size:14px;line-height:1.6;color:var(--dp-text-gray)}
+@media(max-width:900px){.fast-grid{grid-template-columns:1fr;gap:28px}.fast-heading .section-title{max-width:680px}.fast-details{border-left:0;border-top:1px solid var(--dp-border);padding:28px 0 0}}
+@media(max-width:640px){.fast-section{padding:58px 0}.fast-heading .section-title{font-size:clamp(30px,9vw,40px)}}
+
+/* Confianza: Google con la marca, YouTube con su rojo corporativo. */
+.reviews{padding:18px 0 0;background:#fff}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:30px}
+.trust-card{border-radius:28px;padding:32px;color:#fff;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+.trust-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(22,22,26,.18)}
+.trust-card .eyebrow{color:#fff;justify-content:flex-start}.trust-card .eyebrow .line{background:rgba(255,255,255,.5)}
+.trust-card h3{color:#fff;margin:10px 0 8px;font-size:22px}
+.trust-card p{color:rgba(255,255,255,.86);margin:0 0 14px;font-size:14px}
+.trust-card b{font-weight:800;color:#fff}
+.trust-card.google{background:linear-gradient(135deg,#2A2A31,var(--dp-ink))}
+.trust-card.youtube{background:linear-gradient(135deg,#B91C12,#E5251B)}
+@media(max-width:700px){.trust-grid{grid-template-columns:1fr}}
+
+/* Servicios */
+.solutions{padding:85px 0;background:#fff}
+.section-title{color:var(--dp-ink);line-height:1.24}
+.solutions .solutions-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;width:100%;max-width:1100px;margin:42px auto 0;padding:0}
+.solutions .sol-card{width:100%;margin:0;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;border:1px solid var(--dp-border);background:linear-gradient(#fff,var(--dp-soft-2))}
+.solutions .sol-card:hover{box-shadow:0 14px 28px rgba(194,24,91,.12);border-color:var(--dp-steel-soft)}
+.sol-icon{background:var(--dp-soft);color:var(--dp-brand);font-size:29px;font-weight:500}
+.sol-card h3{color:var(--dp-ink)}.sol-card p{color:var(--dp-text-gray)}
+@media(max-width:900px){.solutions .solutions-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px}}
+@media(max-width:560px){.solutions .solutions-grid{gap:10px;margin-top:28px}.solutions .sol-card{padding:22px 10px}}
+
+/* Por qué DysonPlus */
+.why-us{background:linear-gradient(125deg,var(--dp-ink-2) 0%,var(--dp-ink) 52%,var(--dp-brand-darker) 100%);color:#fff}
+.why-image{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(145deg,var(--dp-brand-dark) 0%,var(--dp-brand-darker) 100%);border:1px solid var(--dp-brand);min-height:480px}
+.why-image::before{background-image:url('img/dysonplus-hero-pattern.svg');background-repeat:no-repeat;background-size:cover;background-position:center;opacity:.35;filter:none}
+/* Ilustración en la parte superior y cita debajo, sin solaparse en ningún ancho. */
+.why-repair-art{position:absolute;inset:18px 18px auto 18px;width:calc(100% - 36px);height:240px;object-fit:contain;object-position:center top;z-index:1;opacity:.9;pointer-events:none;filter:drop-shadow(0 14px 24px rgba(13,13,16,.18))}
+.why-quote{position:absolute;left:36px;bottom:34px;z-index:3;max-width:285px;background:var(--dp-ink);border:1px solid rgba(255,111,168,.34);padding:18px 20px;border-radius:12px;box-shadow:0 16px 35px rgba(0,0,0,.2)}
+.why-quote p,.why-quote p em{font-family:var(--editorial-accent);font-style:italic;font-weight:500;line-height:1.2;color:#fff;text-shadow:0 2px 7px rgba(0,0,0,.28)}
+.why-quote p em{color:var(--dp-accent)}
+.why-quote .underline{background:var(--dp-accent)}
+.why-eyebrow{color:var(--dp-accent)}.why-eyebrow .line{background:var(--dp-accent)}
+.why-us h2{color:#fff}.why-us h2 .title-accent{color:var(--dp-accent)}
+.why-item .why-icon{color:var(--dp-accent);background:rgba(255,111,168,.12);border:1px solid rgba(255,111,168,.18);font-size:24px}
+.why-item h4{color:#fff}.why-item p{color:#D8DBE0}
+@media(max-width:900px){.why-quote{left:24px;bottom:24px}}
+@media(max-width:560px){.why-image{min-height:460px}.why-repair-art{inset:16px 16px auto 16px;width:calc(100% - 32px);height:230px;opacity:.95}.why-quote{left:18px;right:18px;bottom:18px;max-width:none}}
+
+/* Cómo trabajamos: separado visualmente del bloque de contacto. */
+.how{padding:86px 0 96px;background:#fff}
+.how-num{background:linear-gradient(135deg,#FF6FA8,var(--dp-accent-strong));box-shadow:0 8px 22px rgba(216,27,96,.26)}
+.how-arrow{color:var(--dp-accent)}.how-step p{color:var(--dp-text-gray)}
+
+/* Contacto y mapa */
+.cta-banner-wrap{padding:96px 0 88px;background:linear-gradient(180deg,var(--dp-soft) 0%,var(--dp-soft-2) 100%);border-top:1px solid var(--dp-border)}
+.contact-info .eyebrow{justify-content:flex-start}
+.contact-info h2{color:var(--dp-ink)}
+.contact-phone a,.privacy-check a{color:var(--dp-brand)}
+#contact-form input:not([type=checkbox]),#contact-form textarea{background:#fff;border-color:var(--dp-border);color:var(--dp-text)}
+#contact-form input:focus,#contact-form textarea:focus{border-color:var(--dp-brand);box-shadow:0 0 0 3px rgba(194,24,91,.14)}
+.privacy-check{display:flex;align-items:flex-start;gap:10px;min-width:0}
+.privacy-check input[type=checkbox]{width:17px;height:17px;flex:0 0 17px;margin-top:2px;accent-color:var(--dp-brand)}
+.privacy-check span{min-width:0;flex:1}
+.contact-map{margin-top:20px;box-shadow:0 12px 28px rgba(94,11,44,.1);border:1px solid var(--dp-border);border-radius:16px;overflow:hidden}
+.contact-map iframe{display:block;width:100%;max-width:100%;height:340px;border:0}
+#status.is-ok{color:var(--dp-brand-dark)}#status.is-error{color:#B42318}
+
+/* Preguntas frecuentes */
+.faq-section{padding:85px 0;background:var(--dp-soft)}
+.faq-list{max-width:820px;margin:28px auto 0;display:grid;gap:10px}
+.faq-list details{background:#fff;border:1px solid var(--dp-border);border-radius:15px;padding:18px 20px;box-shadow:0 5px 16px rgba(22,22,26,.045)}
+.faq-list summary{font-weight:800;cursor:pointer;color:var(--dp-ink);list-style:none;display:flex;align-items:center;gap:10px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::before{content:"▶";font-size:11px;color:var(--dp-accent-strong);transition:transform .15s ease;flex:none}
+.faq-list details[open]{border-color:var(--dp-accent)}
+.faq-list details[open] summary{color:var(--dp-brand-dark)}
+.faq-list details[open] summary::before{transform:rotate(90deg)}
+.faq-list p{margin:12px 0 0;color:var(--dp-text-gray);font-size:14.5px;line-height:1.65}
+@media(max-width:640px){.faq-section{padding:55px 0}}
+
+/* Texto SEO */
+.seo-text{padding:clamp(65px,8vw,108px) 0;background:linear-gradient(140deg,var(--dp-soft-2),#fff 56%,var(--dp-soft))}
+.seo-layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(30px,5vw,85px);max-width:1100px;margin:0 auto}
+.seo-heading{border-left:3px solid var(--dp-accent-strong);padding:8px 0 0 22px}
+.seo-kicker{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dp-brand);font-weight:800;margin-bottom:17px}
+.seo-text h2{max-width:none;margin:0;text-align:left;font-size:clamp(28px,3vw,38px);line-height:1.26;letter-spacing:-.04em;color:var(--dp-ink)}
+.seo-text .seo-description p{max-width:none;font-size:15px;line-height:1.85;color:var(--dp-text-gray);margin:0 0 21px}
+.seo-text .seo-description p:first-child{color:var(--dp-text);font-size:16px}
+.seo-text .seo-description p:last-child{margin-bottom:0}
+
+/* Footer */
+footer{background:var(--dp-ink);color:#E6E3E8;padding-top:56px}
+footer .footer-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.85fr) minmax(0,1.1fr);gap:clamp(24px,5vw,75px)}
+.footer-logo-word{font-size:21px}
+.footer-brand-note{font-size:13px;line-height:1.6;color:#C9CCD2;max-width:260px;margin-top:14px}
+.footer-col ul li a,.footer-contact li,footer .footer-contact a{color:#D8DBE0}
+footer .footer-col ul li a:hover,footer .footer-contact a:hover,footer .footer-bottom-links a:hover{color:#fff}
+footer .footer-contact li svg{color:var(--dp-accent)}
+footer .footer-bottom{border-top:1px solid rgba(255,255,255,.09)}
+footer .footer-bottom-links a{color:#C9CCD2}
+
+/* Cookies */
+.cookie-banner{position:fixed;inset:auto 0 0;z-index:99999;background:var(--dp-ink);color:#fff;padding:20px 52px 20px 20px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:15px;box-shadow:0 -8px 24px rgba(0,0,0,.2)}
+.cookie-banner[hidden]{display:none}
+.cookie-banner p{max-width:850px;flex:1 1 380px;font-size:13px;line-height:1.5}
+.cookie-actions{display:flex;flex-wrap:wrap;gap:8px}
+.cookie-btn{background:var(--dp-brand);color:#fff!important;border:1px solid var(--dp-brand);padding:10px 17px;border-radius:24px;font-weight:700;font-size:13px;text-align:center;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.cookie-btn:hover,.cookie-btn:focus-visible{background:var(--dp-brand-dark);border-color:var(--dp-brand-dark)}
+#cookie-reject,.cookie-link{background:transparent;border-color:rgba(255,111,168,.55)}
+#cookie-reject:hover,#cookie-reject:focus-visible,.cookie-link:hover,.cookie-link:focus-visible{background:rgba(255,111,168,.16);border-color:var(--dp-accent)}
+.cookie-link{text-decoration:none}
+.cookie-close{position:absolute;right:12px;top:9px;color:#fff;font-size:23px;padding:4px 9px;background:transparent;border:0;cursor:pointer;border-radius:8px}
+.cookie-close:hover,.cookie-close:focus-visible{color:var(--dp-accent)}
+
+/* Responsive */
+@media(max-width:980px){.nav-wrap{gap:0}.nav-wrap>.nav-cta{display:none}.menu-toggle{display:inline-flex}.seo-layout{grid-template-columns:1fr;gap:30px}}
+@media(max-width:640px){
+  .hero{background:linear-gradient(180deg,var(--dp-soft) 0%,var(--dp-soft-2) 23%,#fff 52%,var(--dp-soft-2) 86%,var(--dp-soft) 100%);padding:52px 0 48px}
+  .hero-glow{width:75vw;max-width:75vw;height:135px;filter:blur(38px);animation:none;opacity:.42}
+  .hero-glow.left{left:-18%;top:-80px}.hero-glow.right{right:-18%;top:auto;bottom:-70px}
+  .hero-pattern{opacity:.36;background-size:auto 100%,52px 52px,52px 52px}
+  .hero .container{padding:0 18px}
+  /* H1 móvil unificado a 48px en toda la familia. */
+  .hero h1{font-size:48px;line-height:1.08;letter-spacing:-.045em;margin-bottom:29px}
+  .hero-features{gap:10px 18px;margin-bottom:25px}.hero-feature{font-size:12px}
+  .hero-info{padding:17px 16px;gap:15px}
+  .hero-actions .hero-action{font-size:clamp(12px,3.45vw,14px);padding:12px 13px;min-height:54px}
+  .solutions{padding:67px 0}.why-us{padding:64px 0}.how{padding:65px 0 72px}.cta-banner-wrap{padding:70px 0}
+  .seo-text{padding:64px 0}.seo-heading{padding-left:17px}
+  .seo-text .seo-description p{font-size:14.5px;line-height:1.75}.seo-text .seo-description p:first-child{font-size:15px}
+  .contact-map iframe{height:300px}
+  footer .footer-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:22px 16px}
+  footer .footer-grid>.footer-col:first-child{grid-column:1/-1}
+  footer .footer-col h5{font-size:14px}
+  footer .footer-col li,footer .footer-contact li{font-size:12px;overflow-wrap:anywhere}
+  .cookie-banner{padding:18px 44px 18px 14px;text-align:left}.cookie-actions{flex:1 1 100%}.cookie-btn{flex:1}
+  .disclaimer-bar{font-size:11.5px;padding:8px 12px}
+}
+@media(max-width:370px){.hero .container{padding:0 16px}.hero-actions .hero-action{font-size:12px;padding:11px 9px}footer .footer-grid{gap:16px 11px}footer .footer-contact li{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.hero-glow,.hero-inner h1,.hero-inner .eyebrow,.hero-inner .hero-features,.hero-vacuum-art{animation:none}}

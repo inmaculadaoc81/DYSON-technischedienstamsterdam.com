@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vitoriaserviciotecnico.com.es/sitemap.xml

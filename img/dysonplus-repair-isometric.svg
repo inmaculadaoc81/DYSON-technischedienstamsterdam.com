@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520">
+<defs>
+ <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#DCDEE3"/><stop offset=".5" stop-color="#C2185B"/><stop offset="1" stop-color="#9C1248"/></linearGradient>
+ <linearGradient id="n" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2E0C1B"/><stop offset="1" stop-color="#0D0D10"/></linearGradient>
+ <filter id="s"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#0D0D10" flood-opacity=".28"/></filter>
+</defs>
+<g filter="url(#s)">
+ <path d="M150 330 360 208l250 142-218 126z" fill="#5E0B2C" stroke="#C2185B" stroke-width="3"/>
+ <path d="m150 330 242 146v28L150 358z" fill="#16161A"/>
+ <path d="m392 476 218-126v28L392 504z" fill="#9C1248"/>
+</g>
+<!-- motor / turbine -->
+<g transform="translate(180 130)">
+ <circle cx="105" cy="105" r="94" fill="url(#n)" stroke="#B8BCC4" stroke-width="7"/>
+ <circle cx="105" cy="105" r="65" fill="#9C1248"/>
+ <circle cx="105" cy="105" r="23" fill="#EDECEF"/>
+ <g fill="#DCDEE3">
+  <path d="M105 48c23 0 38 12 43 23l-31 20z"/><path d="M162 105c0 23-12 38-23 43l-20-31z"/>
+  <path d="M105 162c-23 0-38-12-43-23l31-20z"/><path d="M48 105c0-23 12-38 23-43l20 31z"/>
+ </g>
+</g>
+<!-- circuit board -->
+<g transform="translate(390 105) rotate(8 100 75)">
+ <rect width="205" height="150" rx="16" fill="#B51553" stroke="#DCDEE3" stroke-width="5"/>
+ <g fill="#EDECEF"><rect x="22" y="24" width="52" height="38" rx="5"/><rect x="92" y="22" width="88" height="22" rx="4"/><rect x="98" y="62" width="72" height="58" rx="5"/><circle cx="46" cy="104" r="17"/></g>
+ <g stroke="#B8BCC4" stroke-width="5" fill="none"><path d="M74 43h18M46 62v25M63 104h35M170 91h24"/></g>
+</g>
+<!-- screwdriver -->
+<g transform="translate(430 292) rotate(-22)">
+ <rect x="0" y="22" width="190" height="22" rx="11" fill="#D2D5DB"/>
+ <rect x="132" y="3" width="125" height="60" rx="26" fill="url(#b)"/>
+ <path d="M0 33h-50" stroke="#EDECEF" stroke-width="14" stroke-linecap="round"/>
+</g>
+<!-- gear -->
+<g transform="translate(280 320)">
+ <circle cx="70" cy="70" r="58" fill="#C2185B" stroke="#DCDEE3" stroke-width="6"/>
+ <circle cx="70" cy="70" r="23" fill="#16161A"/>
+ <g stroke="#B8BCC4" stroke-width="15"><path d="M70 0v22M70 118v22M0 70h22M118 70h22M20 20l16 16M104 104l16 16M120 20l-16 16M36 104l-16 16"/></g>
+</g>
+<!-- small components -->
+<g fill="#DCDEE3" opacity=".9"><circle cx="645" cy="120" r="11"/><circle cx="675" cy="154" r="7"/><rect x="115" y="250" width="38" height="12" rx="6"/></g>
+</svg>
