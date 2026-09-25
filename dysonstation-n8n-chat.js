@@ -8,8 +8,8 @@ const target = document.querySelector('#n8n-chat');
 // El botón se crea como respaldo visible aunque el módulo remoto de n8n tarde o falle.
 const fallbackToggle = document.createElement('button');
 fallbackToggle.type = 'button';
-fallbackToggle.className = 'dysonplus-chat-fallback';
-fallbackToggle.setAttribute('aria-label', 'Abrir chatbot DysonPlus');
+fallbackToggle.className = 'dysonstation-chat-fallback';
+fallbackToggle.setAttribute('aria-label', 'Chatbot van DysonStation openen');
 fallbackToggle.innerHTML = '<span aria-hidden="true">💬</span><span>Chat</span>';
 document.body.appendChild(fallbackToggle);
 
@@ -20,8 +20,8 @@ const hideFallbackWhenReady = () => {
 const readyObserver = new MutationObserver(hideFallbackWhenReady);
 if (target) readyObserver.observe(target, { childList: true, subtree: true });
 
-if (target && !target.dataset.dysonplusChatInitialized) {
-  target.dataset.dysonplusChatInitialized = 'true';
+if (target && !target.dataset.dysonstationChatInitialized) {
+  target.dataset.dysonstationChatInitialized = 'true';
 
   fallbackToggle.addEventListener('click', () => {
     const realToggle = target.querySelector('.chat-window-toggle, [class*="chat-window-toggle"]');
@@ -37,17 +37,17 @@ if (target && !target.dataset.dysonplusChatInitialized) {
     chatSessionKey: SESSION_KEY,
     metadata: {},
     showWelcomeScreen: true,
-    defaultLanguage: 'es',
+    defaultLanguage: 'nl',
     initialMessages: [
-      'Buenas tardes 👋 ¿Qué avería tiene tu equipo Dyson? Cuéntanos el modelo y el problema para orientarte.'
+      'Hallo 👋 Wat is er mis met je Dyson? Vertel ons het model en het probleem, dan helpen we je verder.'
     ],
     i18n: {
-      es: {
-        title: 'DysonPlus',
-        subtitle: 'Asistente de servicio técnico',
+      nl: {
+        title: 'DysonStation',
+        subtitle: 'Assistent van de reparatieservice',
         footer: '',
-        getStarted: 'INICIAR CONVERSACIÓN',
-        inputPlaceholder: 'Escribe tu mensaje...'
+        getStarted: 'START GESPREK',
+        inputPlaceholder: 'Typ je bericht...'
       }
     }
   });

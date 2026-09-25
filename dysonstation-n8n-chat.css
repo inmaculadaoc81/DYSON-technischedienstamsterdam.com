@@ -1,0 +1,73 @@
+/* Chat n8n DysonStation: ventana profesional, estable y responsive. */
+:root{
+  --chat--toggle--background:#F36C00;
+  --chat--toggle--hover--background:#D45A00;
+  --chat--toggle--active--background:#D45A00;
+  --chat--toggle--color:#17191C;
+  --chat--toggle--size:56px;
+  --chat--header--background:#17191C;
+  --chat--header--color:#fff;
+  --chat--body--background:#FAFAF8;
+  --chat--message--bot--background:#fff;
+  --chat--message--bot--color:#1A1C20;
+  --chat--message--user--background:#F36C00;
+  --chat--message--user--color:#17191C;
+}
+#n8n-chat{font-family:Inter,system-ui,sans-serif}
+#n8n-chat .chat-window-wrapper{
+  position:fixed!important;right:24px!important;bottom:88px!important;left:auto!important;top:auto!important;
+  z-index:10060!important;width:auto!important;height:auto!important;display:flex!important;flex-direction:column!important;
+  align-items:flex-end!important;pointer-events:none!important
+}
+#n8n-chat .chat-window-wrapper>*{pointer-events:auto!important}
+#n8n-chat .chat-window-toggle,#n8n-chat [class*="chat-window-toggle"]{
+  position:relative!important;inset:auto!important;transform:none!important;width:56px!important;height:56px!important;margin:0!important;
+  border-radius:50%!important;border:2px solid #fff!important;background:#F36C00!important;color:#17191C!important;
+  box-shadow:0 8px 26px rgba(243,108,0,.34)!important;transition:transform .18s ease,box-shadow .18s ease,background .18s ease!important
+}
+#n8n-chat .chat-window-toggle:hover,#n8n-chat [class*="chat-window-toggle"]:hover{transform:translateY(-2px) scale(1.04)!important;background:#D45A00!important;box-shadow:0 12px 30px rgba(243,108,0,.42)!important}
+#n8n-chat .chat-window{
+  position:relative!important;inset:auto!important;width:min(390px,calc(100vw - 32px))!important;
+  height:min(600px,calc(100dvh - 176px))!important;max-height:calc(100dvh - 176px)!important;margin:0 0 12px!important;
+  overflow:hidden!important;border:1px solid #E6E2DE!important;border-radius:22px!important;background:#fff!important;
+  box-shadow:0 24px 60px rgba(14,15,17,.22)!important;z-index:10061!important
+}
+#n8n-chat .chat-layout,#n8n-chat .chat-wrapper{background:#FAFAF8!important}
+#n8n-chat .chat-header{background:linear-gradient(135deg,#17191C,#7A3300)!important;color:#fff!important;padding:20px 20px 17px!important}
+#n8n-chat .chat-header h1{font-size:20px!important;line-height:1.2!important;margin:0!important;color:#fff!important}
+#n8n-chat .chat-header p{margin:5px 0 0!important;color:#EDE4DC!important;font-size:12.5px!important}
+#n8n-chat .chat-body{background:#FAFAF8!important}
+#n8n-chat .chat-messages-list{padding:18px!important;gap:10px!important}
+#n8n-chat .chat-message{border-radius:15px!important;line-height:1.5!important;font-size:14px!important}
+#n8n-chat .chat-message-from-bot{background:#fff!important;color:#1A1C20!important;border:1px solid #ECEDEF!important;box-shadow:0 5px 14px rgba(23,25,28,.05)!important}
+#n8n-chat .chat-message-from-user{background:#F36C00!important;color:#17191C!important}
+#n8n-chat .chat-message-markdown p{margin:.15em 0!important}
+#n8n-chat .chat-message-markdown strong,#n8n-chat .chat-message-markdown b{font-weight:700!important}
+#n8n-chat .chat-footer{background:#fff!important;border-top:1px solid #ECEDEF!important;padding:12px 14px 14px!important}
+#n8n-chat textarea[data-test-id="chat-input"]{min-height:46px!important;max-height:110px!important;border:1px solid #E6E2DE!important;border-radius:14px!important;background:#FFFFFF!important;color:#1A1C20!important;padding:12px 46px 12px 13px!important;resize:none!important;box-shadow:none!important}
+#n8n-chat textarea[data-test-id="chat-input"]:focus{outline:none!important;border-color:#F36C00!important;box-shadow:0 0 0 3px rgba(243,108,0,.12)!important}
+#n8n-chat button{border-radius:12px!important}
+@media(max-width:600px){
+  #n8n-chat .chat-window-wrapper{right:16px!important;bottom:72px!important}
+  #n8n-chat .chat-window-toggle,#n8n-chat [class*="chat-window-toggle"]{width:48px!important;height:48px!important}
+  #n8n-chat .chat-window{width:calc(100vw - 24px)!important;height:min(68dvh,calc(100dvh - 138px))!important;max-height:calc(100dvh - 138px)!important;border-radius:18px!important}
+  #n8n-chat .chat-header{padding:17px 17px 14px!important}
+  #n8n-chat .chat-messages-list{padding:14px!important}
+}
+@media(prefers-reduced-motion:reduce){#n8n-chat .chat-window-toggle,#n8n-chat [class*="chat-window-toggle"]{transition:none!important}}
+
+
+/* Botón de respaldo DysonStation: garantiza acceso visible al chatbot */
+.dysonstation-chat-fallback{
+  position:fixed;right:24px;bottom:88px;z-index:10059;
+  min-width:56px;height:56px;padding:0 16px;border:2px solid #fff;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:linear-gradient(135deg,#F36C00,#D45A00);color:#17191C;
+  font:700 14px/1 Inter,system-ui,sans-serif;cursor:pointer;
+  box-shadow:0 10px 28px rgba(243,108,0,.34)
+}
+.dysonstation-chat-fallback span:first-child{font-size:21px}
+.dysonstation-chat-fallback.is-hidden{display:none!important}
+@media(max-width:600px){
+  .dysonstation-chat-fallback{right:16px;bottom:72px;height:50px;min-width:50px;padding:0 13px}
+}

@@ -1,0 +1,14 @@
+/* Cabecera DysonStation: grafito con logotipo blanco y acento naranja. */
+header,header.scrolled{background:#17191C!important;border-bottom:1px solid rgba(255,255,255,.10)!important;box-shadow:0 6px 24px rgba(14,15,17,.18)}
+header .nav-wrap{max-width:1240px;min-height:82px}
+header .logo{gap:11px}
+header .logo-icon{width:44px;height:44px;filter:drop-shadow(0 5px 12px rgba(0,0,0,.14))}
+header .logo-word{color:#fff}
+header .logo-word em{color:#FF8C33}
+header .main-nav>a:not(.mobile-nav-cta){color:#fff}
+header .main-nav>a:not(.mobile-nav-cta):hover,header .main-nav>a:not(.mobile-nav-cta):focus-visible{color:#FF8C33}
+header .menu-toggle{color:#fff;background:transparent;border:0}
+header .nav-cta .btn-primary,header .main-nav .mobile-nav-cta{background:linear-gradient(125deg,#FF8A26,#F36C00);color:#17191C;border:1px solid rgba(255,255,255,.18);box-shadow:0 7px 20px rgba(243,108,0,.32)}
+header .nav-cta .btn-primary:hover,header .main-nav .mobile-nav-cta:hover{background:linear-gradient(125deg,#D45A00,#7A3300)}
+@media(max-width:980px){header nav.main-nav{background:#17191C;border-top-color:rgba(255,255,255,.16)}}
+@media(max-width:640px){header .nav-wrap{min-height:70px}header .logo-icon{width:40px;height:40px}}
