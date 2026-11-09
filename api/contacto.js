@@ -7,6 +7,9 @@ module.exports = async (req, res) => {
   }
   try {
     const input = req.body || {};
+    if (clean(input.website)) return res.status(200).json({ok:true});
+    const ts = Number(input.ts);
+    if (!ts || Date.now() - ts < 2000) return res.status(200).json({ok:true});
     const nombre = clean(input.nombre, 120);
     const modelo = clean(input.modelo, 160);
     const email = clean(input.email, 180);
